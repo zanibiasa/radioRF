@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:nano",
-    "configuration": "cpu=atmega328",
+    "configuration": "cpu=atmega328old",
     "sketch": "receive\\receive.ino"
 }

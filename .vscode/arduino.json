@@ -1,5 +1,6 @@
 {
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328old",
-    "sketch": "receive\\receive.ino"
+    "sketch": "transmit\\transmit.ino",
+    "port": "COM3"
 }

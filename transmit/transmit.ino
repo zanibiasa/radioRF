@@ -10,7 +10,7 @@ int c[5];
 unsigned long start, habis, beza;
 int resistor1;
 int resistor2;
-int resistorArray[];
+uint8_t resistorArray[4];
 void setup()
 {
     Serial.begin(9600);   // Debugging only
@@ -25,14 +25,20 @@ void loop()
     resistor2 = analogRead(A1);
     resistorArray[0] = resistor1;
     resistorArray[2] = resistor2;
-    
+       //Serial.println(resistor1);
+    Serial.print("satu : ");
+    Serial.println(resistorArray[0]);
+    //Serial.println(resistor2);
+    Serial.print("dua : ");
+    Serial.println(resistorArray[2]);
+
     start = millis();
     //sprintf(baf,"%d",b);
-    driver.send((uint8_t *) &resistor, 4);
+    driver.send((uint8_t *) *resistorArray, 4);
     driver.waitPacketSent();
     //delay(5);
     
     delay(2);
     
-    Serial.println(resistor);
+ 
 }
